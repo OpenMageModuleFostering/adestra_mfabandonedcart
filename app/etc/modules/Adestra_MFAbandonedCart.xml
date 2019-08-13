@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Adestra_MFAbandonedCart>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Adestra_MFAbandonedCart>
+    </modules>
+</config> 

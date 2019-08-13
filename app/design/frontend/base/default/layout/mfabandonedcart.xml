@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+	<layout version="0.1.0">
+
+		<checkout_cart_index translate="label">
+				<reference name="content">
+					<block type="mfabandonedcart/checkout" name="mfabandonedcart" template="mfabandonedcart/checkout/update_action.phtml"/>
+				</reference>
+		</checkout_cart_index>
+		
+		<checkout_onepage_review translate="label">
+			<reference name="checkout.onepage.review.info.items.after">
+					<block type="mfabandonedcart/checkout" output="toHtml" name="mfabandonedcart.update" template="mfabandonedcart/checkout/update_action.phtml"/>
+			</reference>
+		</checkout_onepage_review>
+		
+		<checkout_onepage_success translate="label">
+			<reference name="content">
+					<block type="mfabandonedcart/checkout" after="checkout.success" output="toHtml" name="mfabandonedcart.purchase" template="mfabandonedcart/checkout/purchase_action.phtml"/>
+			</reference>
+		</checkout_onepage_success>
+
+
+        <checkout_onepage_shippingmethod>
+			<reference name="content">
+					<block type="mfabandonedcart/checkout" output="toHtml" name="mfabandonedcart.update" template="mfabandonedcart/checkout/update_action.phtml" after="root"/>
+			</reference>
+		</checkout_onepage_shippingmethod>
+
+        <checkout_onepage_index>
+			<reference name="checkout.payment.methods">
+					<block type="mfabandonedcart/checkout" output="toHtml" name="mfabandonedcart.update" template="mfabandonedcart/checkout/update_action.phtml"/>
+			</reference>		
+		</checkout_onepage_index>
+				
+	</layout>

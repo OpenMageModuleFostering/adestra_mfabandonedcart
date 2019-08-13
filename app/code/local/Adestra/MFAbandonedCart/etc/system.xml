@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<config>
+<sections>
+    <adestra translate="label">
+	  <label>Adestra</label>
+	  <tab>general</tab>
+	  <frontend_type>text</frontend_type>
+	  <sort_order>2000</sort_order>
+	  <show_in_default>1</show_in_default>
+	  <show_in_website>1</show_in_website>
+	  <show_in_store>0</show_in_store>
+      <groups>
+        <!-- Abandoned Cart Group -->
+        <mfabandonedcart translate="label" module="mfabandonedcart">
+			<label>Message Focus Abandoned Cart</label>
+			<frontend_type>text</frontend_type>
+			<sort_order>-100</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>0</show_in_store>
+			<expanded>1</expanded>
+			<fields>
+				<enabled translate="label">
+					<label>Enabled</label>
+				    <frontend_type>select</frontend_type>
+				    <source_model>adminhtml/system_config_source_yesno</source_model>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>0</show_in_store>
+				</enabled>
+				<accountid translate="label">
+					<label>Account ID</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>2</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>0</show_in_store>
+				</accountid>
+				<clientdomain translate="label">
+					<label>Client domain</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>3</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>0</show_in_store>
+					<comment><![CDATA[Include trailing slash /.]]></comment>
+				</clientdomain>
+				<captureid translate="label">
+					<label>Capture ID</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>4</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>0</show_in_store>
+				</captureid>
+				<additionalcorefields translate="label">
+					<label>Additional core fields</label>
+					<frontend_type>textarea</frontend_type>
+					<sort_order>5</sort_order>
+					<rows>5</rows>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>0</show_in_store>
+					<comment><![CDATA[Message Focus additional core fields mapping. Use the format {magento_field}|{message_focus_field} and one field mapping per line e.g. firstname|first_name. Additional Magento fields include: prefix, firstname, lastname, company]]></comment>
+				</additionalcorefields>
+				<debug translate="label">
+					<label>Debug</label>
+				    <frontend_type>select</frontend_type>
+				    <source_model>adminhtml/system_config_source_yesno</source_model>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>0</show_in_store>
+					<comment><![CDATA[Writes conversion data to system.log.]]></comment>
+				</debug>
+			</fields>
+			<comment><![CDATA[Enter global options for Abandoned Cart.]]></comment>
+        </mfabandonedcart>
+      </groups>	  
+    </adestra>
+</sections>
+</config>
