@@ -39,7 +39,8 @@ class Adestra_MFAbandonedCart_Model_Conversion {
 		foreach ($cart->getAllVisibleItems() as $item) {
 			$conversion_item = array();
 			$conversion_item['ref'] = $item->getProduct()->getSku();
-			$conversion_item['value'] = number_format($item->getProduct()->getPrice(), 2, '.', '');
+			//$conversion_item['value'] = number_format($item->getProduct()->getPrice(), 2, '.', '');
+			$conversion_item['value'] = number_format($item->getProduct()->getFinalPrice(), 2, '.', '');	// Final price includes discounts.
 			$conversion_item['name'] = $item->getProduct()->getName();
 			$conversion_item['quantity'] = $item->getQty();
 			$conversion_item['image_url'] = urlencode($item->getProduct()->getThumbnailUrl());
