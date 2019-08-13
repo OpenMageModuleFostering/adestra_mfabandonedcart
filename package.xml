@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <package>
     <name>Adestra_MFAbandonedCart</name>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <stability>stable</stability>
     <license>GNU General Public License (GPL)</license>
     <channel>community</channel>
     <extends/>
-    <summary>Adestra Message Focus Abandoned cart</summary>
-    <description>Message Focus conversion capture integration module.</description>
-    <notes>Added functionality to capture the special price in the basket items.</notes>
+    <summary>Adestra MessageFocus Abandoned cart</summary>
+    <description>MessageFocus conversion capture integration module.</description>
+    <notes>New functionality to track anonymous to registered customers with the same abandoned cart token in MessageFocus.</notes>
     <authors><author><name>Anna Grieve</name><user>Adestra</user><email>integrations@adestra.com</email></author></authors>
-    <date>2013-12-13</date>
-    <time>10:35:09</time>
-    <contents><target name="magelocal"><dir name="Adestra"><dir name="MFAbandonedCart"><dir name="Block"><file name="Checkout.php" hash="70e50c4ac3ed85eddb01577a131e275c"/></dir><dir name="Helper"><file name="Data.php" hash="5e73c48ff39c3de8d9fafd9f451e2931"/></dir><dir name="Model"><file name="Conversion.php" hash="56d78a87aaf920bd1fe936e6e11168c2"/></dir><dir name="controllers"><file name="IndexController.php" hash="c09e1260e9aee7ad30b25c9ca5e4e646"/></dir><dir name="etc"><file name="config.xml" hash="c2c84ffcd8f14ca7e314d1ad1425e900"/><file name="system.xml" hash="9ea649f0de6f98188316f378250743a3"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="mfabandonedcart.xml" hash="ffc1de303843a0e960fe101881c83ad8"/></dir><dir name="template"><dir name="mfabandonedcart"><dir name="checkout"><file name="purchase_action.phtml" hash="c79a929292c3ec02c0ab88b27869311c"/><file name="update_action.phtml" hash="9b2b200dc7501a9e181dc02343948b92"/></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Adestra_MFAbandonedCart.xml" hash="98a24bc0c93f67574a5acc486117e3cc"/></dir></target></contents>
+    <date>2014-03-05</date>
+    <time>16:38:08</time>
+    <contents><target name="magelocal"><dir name="Adestra"><dir name="MFAbandonedCart"><dir name="Block"><file name="Checkout.php" hash="70e50c4ac3ed85eddb01577a131e275c"/></dir><dir name="Helper"><file name="Data.php" hash="5e73c48ff39c3de8d9fafd9f451e2931"/></dir><dir name="Model"><file name="Conversion.php" hash="81f4ef1210d27c62a63d23a23d9efe43"/><dir name="Resource"><file name="Setup.php" hash="dfb8d7784e2a6f4c18719eea80f41506"/><dir name="Token"><file name="Collection.php" hash="128f1714c7f8c962d03e4525ac9c5611"/></dir><file name="Token.php" hash="f3f1c401f86229eb9a6f28acd5f1f41b"/></dir><file name="Token.php" hash="5ccdc9b611759caec10f522eefb354ab"/></dir><dir name="controllers"><file name="IndexController.php" hash="ed9191dc3ed6ef95a2313e13756f9305"/></dir><dir name="etc"><file name="config.xml" hash="7ed6c4239697b0f1cd1469604af264b3"/><file name="system.xml" hash="9ea649f0de6f98188316f378250743a3"/></dir><dir name="sql"><dir name="mfabandonedcart_setup"><file name="install-1.0.4.php" hash="f56aebaf2ae75cca3970e5318a9a187e"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="mfabandonedcart.xml" hash="ffc1de303843a0e960fe101881c83ad8"/></dir><dir name="template"><dir name="mfabandonedcart"><dir name="checkout"><file name="purchase_action.phtml" hash="c79a929292c3ec02c0ab88b27869311c"/><file name="update_action.phtml" hash="9b2b200dc7501a9e181dc02343948b92"/></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Adestra_MFAbandonedCart.xml" hash="98a24bc0c93f67574a5acc486117e3cc"/></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php><package><name>Mage_Core_Modules</name><channel>community</channel><min>1.5</min><max>1.7</max></package></required></dependencies>
 </package>

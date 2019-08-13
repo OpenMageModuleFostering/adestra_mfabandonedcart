@@ -24,11 +24,46 @@ class Adestra_MFAbandonedCart_Model_Conversion {
     }
 	
 	private function _updateBasics() {	
+
 		$this->account_id = Mage::getStoreConfig('adestra/mfabandonedcart/accountid');
 		$this->capture_id = Mage::getStoreConfig('adestra/mfabandonedcart/captureid');
 		$this->client_domain = Mage::getStoreConfig('adestra/mfabandonedcart/clientdomain');
-		$this->token = Mage::getSingleton("customer/session")->getEncryptedSessionId();
+
+		$model = Mage::getModel('mfabandonedcart/token');
+		$sid = Mage::getSingleton("customer/session")->getEncryptedSessionId();
+		$quote_id = Mage::getSingleton('checkout/session')->getQuoteId();
+		$session_token = Mage::getSingleton('core/session')->getMFAbandonedCartTokenId();
 		
+		if ($session_token) $model->load($session_token);
+		if(!$model->getTokenId()) $model->loadBySessionId($sid);
+		if(!$model->getTokenId() && $quote_id > 0) $model->loadByQuoteId($quote_id);
+		
+		if(!$model->getTokenId()) {
+			if($quote_id > 0) {
+				$model->setTokenId($sid);
+				$model->setSessionId($sid);
+				$model->setQuoteId($quote_id);
+				$model->save();	
+			}
+		}
+		else {
+			$model->setQuoteId($quote_id);
+			$model->setSessionId($sid);
+			$model->save();				
+		}
+
+		$this->token = $model->getTokenId();
+		Mage::getSingleton('core/session')->setMFAbandonedCartTokenId($model->getTokenId()); 
+//
+//Mage::Log('************');
+//Mage::Log(__FUNCTION__);
+//Mage::Log('Mage sid: '.$sid);
+//Mage::Log('MF token: '.Mage::getSingleton('core/session')->getMFAbandonedCartTokenId());
+//Mage::Log('************');
+		
+
+//		$this->token = $token;
+//		$this->token = Mage::getSingleton("customer/session")->getEncryptedSessionId();				
 	}
 	
 	public function updateCart() {

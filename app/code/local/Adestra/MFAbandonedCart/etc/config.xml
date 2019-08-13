@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Adestra_MFAbandonedCart>
-            <version>1.0.3</version>
+            <version>1.0.4</version>
         </Adestra_MFAbandonedCart>
     </modules>
     <global>
@@ -19,11 +19,35 @@
 		<models>
              <mfabandonedcart>
                 <class>Adestra_MFAbandonedCart_Model</class>
+				<resourceModel>mfabandonedcart_resource</resourceModel> 
              </mfabandonedcart>
+             <mfabandonedcart_resource>
+                <class>Adestra_MFAbandonedCart_Model_Resource</class>
+				<entities>
+					<token>
+						<table>mfabandonedcart_tokens</table>
+					</token>
+				</entities>                 
+             </mfabandonedcart_resource>
         </models>
 		<events>
-<!-- events -->			
-		</events>
+<!--           <customer_login>
+               <observers>
+                   <customer_login_observer>
+                       <class>mfabandonedcart/observer</class>
+                       <method>customerLogin</method>
+                   </customer_login_observer>
+               </observers>
+           </customer_login>
+-->		</events>
+		<resources>
+			<mfabandonedcart_setup>
+				<setup>
+					<module>Adestra_MFAbandonedCart</module>
+					<class>Adestra_MFAbandonedCart_Model_Resource_Setup</class>
+				</setup>
+			</mfabandonedcart_setup>
+		</resources>
     </global>
 	<frontend>
 		<layout>
