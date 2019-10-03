@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Adestra_MFAbandonedCart",
+    "name": "OpenMageModuleFostering\/Adestra_MFAbandonedCart",
     "type": "magento-module",
     "license": "GNU-General-Public-License-(GPL)",
     "homepage": "",
     "description": "Adestra MessageFocus Abandoned cart",
     "authors": [
-    {
-        "name": "Anna Grieve",
-        "email": "integrations@adestra.com"
-    }
-],
+        {
+            "name": "Anna Grieve",
+            "email": "integrations@adestra.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
